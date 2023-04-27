@@ -113,6 +113,7 @@ class VectorStore(ABC):
         self,
         query: str,
         k: int = 4,
+        score_threshold: Optional[float] = None,
         **kwargs: Any,
     ) -> List[Tuple[Document, float]]:
         """Return docs and relevance scores in the range [0, 1].
