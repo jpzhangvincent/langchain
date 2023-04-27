@@ -352,7 +352,6 @@ class VectorStoreRetriever(BaseRetriever, BaseModel):
             if search_type not in ("similarity", "similarity_score_threshold", "mmr"):
                 raise ValueError(f"search_type of {search_type} not allowed.")
             if search_type == "similarity_score_threshold":
-<<<<<<< HEAD
                 score_threshold = values["search_kwargs"].get("score_threshold")
                 if (
                     (not isinstance(score_threshold, float))
@@ -362,12 +361,6 @@ class VectorStoreRetriever(BaseRetriever, BaseModel):
                     raise ValueError(
                         "`score_threshold` is not specified with a float value(0~1) "
                         "in `search_kwargs`."
-=======
-                score_threshold = values["search_kwargs"].get("score_threshold", None)
-                if score_threshold is None and not isinstance(score_threshold, float):
-                    raise ValueError(
-                        "`score_threshold` is not specified with a float value in `search_kwargs`."
->>>>>>> 290165d3 (add search type to allow search using a score threshold)
                     )
         return values
 
